@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #050911;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: yellow;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: yellow;
+  }
+
+body {
+	line-height: 1;
+    color: white;
+    font-family: 'Cormorant SC', serif;
+
+    background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+html{
+  scroll-behavior: smooth;
+
+}
+
+.header_container{
+
+ 
+  height: 100vh;
+  
+    background: linear-gradient(rgba(18, 18, 52, 0.6), rgba(10, 9, 23, 0.9)), url('https://media.istockphoto.com/videos/the-programmer-writes-the-code-for-the-development-of-the-website-video-id1193269492?s=640x640') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header_content{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   gap: 5px;
+}
+.profile_image{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  
+    object-fit: cover;
+    object-position: center right;
+}
+
+.hello_world{
+    color: white;
+    font-size: 30px;
+    width: 418px; /* You Can Use 28ch */
+    margin: 30px auto;
+    border-right: 2px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 3s steps(28) 2s both, blink 0.5s infinite;
+}
+
+.text_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.name{
+    /* font-family: 'Lobster', cursive; */
+    font-size: 4rem;
+}
+.name_design{
+    font-weight: bold;
+color: yellow;
+
+  font-size: 1.7rem;
+  
+}
+
+.job_title{
+    font-size: 1.3rem;
+}
+
+
+@keyframes control-width {
+    from {
+      width: 0;
+    }
+    to {
+      width: 240px;
+    }
+  }
+  @keyframes blink {
+    from {
+      border-right-color: white;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
+
+
+
+
+  /* navbar */
+
+  .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 25px ;
+    transition: all 0.3s ease;
+  }
+  .navbar.sticky{
+    background: #141E30;
+    padding: 10px;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+  }
+  .navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  
+  }
+  .navbar .logo a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .micah{
+    color: yellow;
+    font-weight: 700;
+  }
+  .navbar .menu-list{
+    display: inline-flex;
+  }
+  .menu-list li{
+    list-style: none;
+  }
+  .menu-list li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .menu-list li a:hover{
+    color: #007bff;
+  }
+  
+.icon{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .menu-list .cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
+  
+@media (max-width: 868px) {
+    body.disabled{
+      overflow: hidden;
+    }
+    .icon{
+      display: block;
+    }
+    .icon.hide{
+      display: none;
+    }
+    .navbar .menu-list{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      max-width: 400px;
+      left: -100%;
+      top: 0px;
+      display: block;
+      padding: 40px 0;
+      text-align: center;
+      background: #0d1420; 
+      transition: all 0.3s ease;
+    }
+    .navbar.show .menu-list{
+      left: 0%;
+    }
+    .navbar .menu-list li{
+      margin-top: 45px;
+    }
+    .navbar .menu-list li a{
+      font-size: 23px;
+      margin-left: -100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .navbar.show .menu-list li a{
+      margin-left: 0px;
+    }
+  }
+  @media (max-width: 380px) {
+    .navbar .logo a{
+      font-size: 27px;
+    }
+  }
+  
+
+  /* about me */
+  
+.about{
+	width: 100%;
+	padding: 100px 0px;
+	/* background-color: #191919; */
+    text-align: center;
+}
+.about img, .about .lottie{
+	height: auto;
+	width: 430px;
+    display: none;
+}
+.about-text{
+	max-width: 550px;
+  word-wrap: break-word;
+}
+.about-main{
+	/* width: 1130px;
+	max-width: 95%; */
+	/* margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-text h2{
+	color: white;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+.about-text h5{
+	color: yellow;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+
+  
+}
+.about-text p{
+	color: #fcfc;
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 18px;
+	margin-bottom: 45px;
+}
+button{
+  background-color: rgb(47, 59, 84);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 4px;
+	transition: .4s; 
+}
+button:hover{
+	background-color: transparent;
+	border: 2px solid yellow;
+	cursor: pointer;
+}
+
+
+/* skills */
+
+.skills{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 75vh; */
+  border-top: 1px solid   rgb(47, 59, 84);;
+  /* background-color: rgb(30, 39, 58); */
+}  
+
+.featured_skills{
+  margin: 10px 0;
+  align-items: start;
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: repeat(auto-fit, 150px);
+	justify-content: center;
+  /* background: red; */
+}
+.skill_box{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  align-items: center;
+  background-color: rgb(47, 59, 84);
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.25s ease-in-out 0s;
+  
+  
+}
+
+.skill_box p{
+  color: yellow;
+}
+
+.section-title{
+  display: flex;justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+.my-skills .title{
+  margin-top: 1rem;
+  
+}
+
+.my-skills .infos{
+  margin-top: 8px;
+}
+
+.my-skills{
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+/* projects */
+
+.projects{
+  /* height: 65vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 3rem 0;
+  margin: 40rem 0; */
+  border-top: 1px solid   rgb(47, 59, 84);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+.latest_projects{
+  
+  margin: 10px 0;
+  align-items: start;
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: repeat(auto-fit, 350px);
+	justify-content: center;
+  /* background: red; */
+}
+
+.project_box{
+  background-color: rgb(47, 59, 84);
+  
+  height: 350px;
+  position: relative;
+  
+}
+
+.project_image{
+  height: 50%;
+  background: blue;
+  object-fit: contain;
+}
+
+.project_image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+.project_box:hover img{
+  -webkit-transform: scale3d(1.02, 1.02, 1);
+  transform: scale3d(1.02, 1.02, 1);
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.project_title{
+  font-size: 2rem;
+}
+.project_description{
+  font-size: 1.2rem;
+  color: yellow;
+}
+
+.bottom_elements{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom_elements button{
+  background: #141E30;
+}
+.bottom_elements button:hover{
+  transition: all 0.5s ease-in-out;
+  background: transparent;
+  border: 2px solid yellow;
+}
+
+/* contact me */
+
+.contact{
+  display: flex;
+  flex-direction: column;
+}
+
+#contact_content{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+
+ 
+}
+
+#contact_content .left, #contact_content .right{
+  /* background: red; */
+  width: 500px;
+  height: 500px;
+
+  background-color: rgb(47, 59, 84);
+
+}
+
+#contact_content .left{
+  display: none;
+}
+
+#contact_content .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section_style{
+  padding: 7rem 0;
+}
+.social_row{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 2rem 0;
+}
+
+.social_row p{
+  font-size: 1.2rem;
+}
+
+.divider{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1px;
+  background: rgb(70, 69, 84);
+  margin: 1rem 0;
+}
+.social_icons_container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+
+.social_icons_container a{
+  text-decoration: none;
+  color: white;
+  
+  padding: 10px;
+  background: grey;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+
+  .contact{
+    border-top: 1px solid   rgb(47, 59, 84);
+
+  }
+#contact_content{
+ flex-direction: row;
+}
+#contact_content .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.about .lottie{
+  display: flex;
+}
+
+.section-title{
+  margin: 1rem 0;
+}
+}
